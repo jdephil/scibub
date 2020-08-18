@@ -1,0 +1,19 @@
+import React, { FunctionComponent, useState } from 'react'
+
+type ParagraphProps = {
+  h2loop: string
+}
+
+const Paragraph: FunctionComponent<ParagraphProps> = ({ h2loop }) => <aside>
+  <div>
+      <h2> { h2loop } </h2>
+    </div>
+</aside>
+  
+let el = <Paragraph h2loop = "hello" />
+
+
+export default Paragraph
+
+  
+  
