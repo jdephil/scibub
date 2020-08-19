@@ -127,19 +127,28 @@ export class Flower extends Component <AppProps, AppState> {
     
     this.paragraphTween = gsap.fromTo(this.paragraph, {opacity: 0}, {opacity: 1, duration: 3, delay: 8});
     
-    this.dropTween = gsap.to(this.drop2, {x:200, width: 20, duration: 2, delay: 8.5});
-    this.dropTween = gsap.to(this.drop2, {x:200, width: 20, duration: 2, delay: 8});
-    this.dropTween = gsap.to(this.drop4, {x:200, width: 20, duration: 2, delay: 8.5});
-    this.dropTween = gsap.to(this.drop5, {x:200, width: 20, duration: 2, delay: 8});
+    this.dropTween = gsap.to(this.drop2, {x:640, width: 20, duration: 2, delay: 8.5});
+    this.dropTween = gsap.to(this.drop3, {x:440, width: 20, duration: 2, delay: 8});
+    this.dropTween = gsap.to(this.drop4, {x:-360, width: 20, duration: 2, delay: 8.5});
+    this.dropTween = gsap.to(this.drop5, {x:-160, width: 20, duration: 2, delay: 8});
     
-    this.dropTween = gsap.to(this.drop2, { y: 300, duration: 2, delay: 10.5});
-    this.dropTween = gsap.to(this.drop3, { y: 300, duration: 2, delay: 10});
-    this.dropTween = gsap.to(this.drop4, { y: 300, duration: 2, delay: 10.5});
-    this.dropTween = gsap.to(this.drop5, { y: 300, duration: 2, delay: 10});
+    this.dropTween = gsap.to(this.drop2, { y: 360, duration: 2, delay: 10.5});
+    this.dropTween = gsap.to(this.drop3, { y: 400, duration: 2, delay: 10});
+    this.dropTween = gsap.to(this.drop4, { y: 380, duration: 2, delay: 10.5});
+    this.dropTween = gsap.to(this.drop5, { y: 430, duration: 2, delay: 10});
 
+    // this.dropTween = gsap.to(this.drop2, { y: 360, duration: 1, delay: 9});
+    // this.dropTween = gsap.to(this.drop3, { y: 400, duration: 1, delay: 9});
+    // this.dropTween = gsap.to(this.drop4, { y: 380, duration: 1, delay: 9});
+    // this.dropTween = gsap.to(this.drop5, { y: 430, duration: 1, delay: 9});
 
-    this.paragraphTween = gsap.to(this.paragraph2, {opacity: 1, duration: 2, delay: 12});
-    this.paragraphTween = gsap.to(this.paragraph, {opacity: 0, duration: 2, delay: 12});
+    this.dropTween = gsap.to(this.drop2, {x: 665, y: 350, duration: 1, delay: 12});
+    this.dropTween = gsap.to(this.drop3, { x: 420, duration: 1, delay: 12.5});
+    this.dropTween = gsap.to(this.drop4, { x: -390, y: 360, duration: 1, delay: 12});
+    this.dropTween = gsap.to(this.drop5, { x: -140, y: 410, duration: 1, delay: 12.5});
+
+    this.paragraphTween = gsap.to(this.paragraph2, {opacity: 1, duration: 2, delay: 13.5});
+    this.paragraphTween = gsap.to(this.paragraph, {opacity: 0, duration: 2, delay: 13.5});
 
     
   }
