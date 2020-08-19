@@ -34,7 +34,9 @@ export class Flower extends Component <AppProps, AppState> {
     this.flower = null;
     this.roots = null;
     this.title = null;
+
     this.paragraph = null;
+    this.paragraph2 = null;
 
     this.backgroundTween = null;
     this.cloudTween = null;
@@ -65,7 +67,9 @@ export class Flower extends Component <AppProps, AppState> {
   flower: HTMLDivElement | null;
   roots: HTMLDivElement | null;
   title: HTMLDivElement | null;
+
   paragraph: HTMLDivElement | null;
+  paragraph2: HTMLDivElement | null;
 
   backgroundTween: ReturnType<typeof TweenLite.to> | null;
   cloudTween: ReturnType<typeof TweenLite.to> | null;
@@ -120,7 +124,22 @@ export class Flower extends Component <AppProps, AppState> {
     this.rootsTween = gsap.fromTo(this.roots, {opacity: 0}, {opacity: 1, duration: 2, delay: 3});
     this.flowerTween = gsap.fromTo(this.flower, {opacity: 0}, {opacity: 1, duration: 3, delay: 7});
     this.titleTween = gsap.fromTo(this.title, {opacity: 0}, {opacity: 1, duration: 3, delay: 7});
-    this.paragraphTween = gsap.fromTo(this.title, {opacity: 0}, {opacity: 1, duration: 3, delay: 8});
+    
+    this.paragraphTween = gsap.fromTo(this.paragraph, {opacity: 0}, {opacity: 1, duration: 3, delay: 8});
+    
+    this.dropTween = gsap.to(this.drop2, {x:200, width: 20, duration: 2, delay: 8.5});
+    this.dropTween = gsap.to(this.drop2, {x:200, width: 20, duration: 2, delay: 8});
+    this.dropTween = gsap.to(this.drop4, {x:200, width: 20, duration: 2, delay: 8.5});
+    this.dropTween = gsap.to(this.drop5, {x:200, width: 20, duration: 2, delay: 8});
+    
+    this.dropTween = gsap.to(this.drop2, { y: 300, duration: 2, delay: 10.5});
+    this.dropTween = gsap.to(this.drop3, { y: 300, duration: 2, delay: 10});
+    this.dropTween = gsap.to(this.drop4, { y: 300, duration: 2, delay: 10.5});
+    this.dropTween = gsap.to(this.drop5, { y: 300, duration: 2, delay: 10});
+
+
+    this.paragraphTween = gsap.to(this.paragraph2, {opacity: 1, duration: 2, delay: 12});
+    this.paragraphTween = gsap.to(this.paragraph, {opacity: 0, duration: 2, delay: 12});
 
     
   }
@@ -181,6 +200,11 @@ export class Flower extends Component <AppProps, AppState> {
           <div ref={div => this.paragraph = div} className='paragraphDiv'>
             <h2>
               "First, the flower's roots absorb the water and nutrients in the soil."
+            </h2>
+          </div>
+          <div ref={div => this.paragraph2 = div} className='paragraph2Div'>
+            <h2>
+              "The chloroplasts in their leaves convert water and nutrients into food and give plants their green color"
             </h2>
           </div>
         </div>
