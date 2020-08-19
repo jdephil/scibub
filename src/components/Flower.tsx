@@ -247,19 +247,19 @@ export class Flower extends Component <AppProps, AppState> {
             <h1>Photosynthesis</h1>
           </div>
           <div ref={div => this.paragraph = div} className='paragraphDiv'>
-            <h2>
+            <h3>
               First, the flower's roots absorb the water and nutrients from the soil.
-            </h2>
+            </h3>
           </div>
           <div ref={div => this.paragraph2 = div} className='paragraph2Div'>
-            <h2>
+            <h3>
               The water mixes with sunlight and carbon dioxide to make the flower's favorite snack- sugar.
-            </h2>
+            </h3>
           </div>
           <div ref={div => this.paragraph3 = div} className='paragraph3Div'>
-            <h2>
+            <h3>
               This process also releases oxygen back into the air.
-            </h2>
+            </h3>
           </div>
         </div>
   
