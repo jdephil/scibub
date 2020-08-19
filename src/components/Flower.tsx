@@ -18,6 +18,8 @@ export class Flower extends Component <AppProps, AppState> {
   constructor(props: AppProps) {
     super(props);
 
+    this.background = null;
+
     this.cloud = null;
     this.cloud2 = null;
     this.cloud3 = null;
@@ -34,6 +36,7 @@ export class Flower extends Component <AppProps, AppState> {
     this.title = null;
     this.paragraph = null;
 
+    this.backgroundTween = null;
     this.cloudTween = null;
     this.dropTween = null;
     this.stemTween = null;
@@ -45,6 +48,8 @@ export class Flower extends Component <AppProps, AppState> {
     
     
   }
+
+  background: HTMLDivElement | null;
   
   cloud: HTMLDivElement | null;
   cloud2: HTMLDivElement | null;
@@ -62,6 +67,7 @@ export class Flower extends Component <AppProps, AppState> {
   title: HTMLDivElement | null;
   paragraph: HTMLDivElement | null;
 
+  backgroundTween: ReturnType<typeof TweenLite.to> | null;
   cloudTween: ReturnType<typeof TweenLite.to> | null;
   dropTween: ReturnType<typeof TweenLite.to> | null;
   stemTween: ReturnType<typeof TweenLite.to> | null;
@@ -74,13 +80,33 @@ export class Flower extends Component <AppProps, AppState> {
 
   componentDidMount() {
 
+    this.backgroundTween = gsap.fromTo(this.background, {filter: "brightness(.3)"}, {filter: "brightness(1)", duration: 5})
+
     this.cloudTween = gsap.fromTo(this.cloud, { filter: "brightness(0.5)" },
     {
       duration: .2,
       filter: "brightness(1)",
       yoyo: true,
-      repeat: -1,
+      repeat: 10,
       //repeatDelay: 0.5,
+      ease: "none"
+    })
+    this.cloudTween = gsap.fromTo(this.cloud2, { filter: "brightness(0.5)" },
+    {
+      duration: .2,
+      filter: "brightness(1)",
+      yoyo: true,
+      repeat: 8,
+      repeatDelay: 0.2,
+      ease: "none"
+    })
+    this.cloudTween = gsap.fromTo(this.cloud3, { filter: "brightness(0.5)" },
+    {
+      duration: .2,
+      filter: "brightness(1)",
+      yoyo: true,
+      repeat: 10,
+      repeatDelay: 0.1,
       ease: "none"
     })
     
@@ -92,8 +118,8 @@ export class Flower extends Component <AppProps, AppState> {
 
     this.stemTween = gsap.fromTo(this.stem, {height: 0, opacity: 0}, { height: 40, opacity: 1, duration: 5, delay: 3});
     this.rootsTween = gsap.fromTo(this.roots, {opacity: 0}, {opacity: 1, duration: 2, delay: 3});
-    this.flowerTween = gsap.fromTo(this.flower, {opacity: 0}, {opacity: 1, duration: 3, delay: 8});
-    this.titleTween = gsap.fromTo(this.title, {opacity: 0}, {opacity: 1, duration: 3, delay: 8});
+    this.flowerTween = gsap.fromTo(this.flower, {opacity: 0}, {opacity: 1, duration: 3, delay: 7});
+    this.titleTween = gsap.fromTo(this.title, {opacity: 0}, {opacity: 1, duration: 3, delay: 7});
     this.paragraphTween = gsap.fromTo(this.title, {opacity: 0}, {opacity: 1, duration: 3, delay: 8});
 
     
@@ -113,16 +139,16 @@ export class Flower extends Component <AppProps, AppState> {
     return (
       <div>
         <div className='papaDiv'>
-          <div  className='bgDiv'>
+          <div ref={div => this.background = div} className='bgDiv'>
             <img className='bgImg fImgs' src='./flower/background.png' alt='sky above a plot of earth' />
           </div>
           <div ref={div => this.cloud = div} className='cloudDiv'>
             <img className='cloudImg fImgs' src='./flower/cloud.png' alt='cloud' />
           </div>
-          <div className='cloudDiv2'>
+          <div ref={div => this.cloud2 = div} className='cloudDiv2'>
             <img className='cloudImg fImgs' src='./flower/cloud.png' alt='cloud' />
           </div>
-          <div className='cloudDiv3'>
+          <div ref={div => this.cloud3 = div} className='cloudDiv3'>
             <img className='cloudImg fImgs' src='./flower/cloud.png' alt='cloud' />
           </div>
           <div ref={div => this.drop = div} className='waterDiv'>
@@ -154,7 +180,7 @@ export class Flower extends Component <AppProps, AppState> {
           </div>
           <div ref={div => this.paragraph = div} className='paragraphDiv'>
             <h2>
-              {this.state}
+              "First, the flower's roots absorb the water and nutrients in the soil."
             </h2>
           </div>
         </div>
