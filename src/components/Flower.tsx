@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 import './Flower.css';
 import gsap from 'gsap';
 import { TweenLite, TimelineLite } from "gsap";
-import Paragraph from './Paragraph'
+
 
 interface AppProps {}
 interface AppState {}
@@ -38,6 +38,13 @@ export class Flower extends Component <AppProps, AppState> {
     this.paragraph = null;
     this.paragraph2 = null;
 
+    this.oxy = null;
+    this.oxy2 = null;
+    this.oxy3 = null;
+    this.oxy4 = null;
+    this.oxy5 = null;
+    this.oxy6 = null;
+
     this.backgroundTween = null;
     this.cloudTween = null;
     this.dropTween = null;
@@ -45,7 +52,8 @@ export class Flower extends Component <AppProps, AppState> {
     this.flowerTween = null;
     this.rootsTween = null;
     this.titleTween = null;
-    this.paragraphTween = null;    
+    this.paragraphTween = null; 
+    this.oxyTween = null;
 
     
     
@@ -71,6 +79,13 @@ export class Flower extends Component <AppProps, AppState> {
   paragraph: HTMLDivElement | null;
   paragraph2: HTMLDivElement | null;
 
+  oxy: HTMLDivElement | null; 
+  oxy2: HTMLDivElement | null; 
+  oxy3: HTMLDivElement | null; 
+  oxy4: HTMLDivElement | null; 
+  oxy5: HTMLDivElement | null; 
+  oxy6: HTMLDivElement | null; 
+
   backgroundTween: ReturnType<typeof TweenLite.to> | null;
   cloudTween: ReturnType<typeof TweenLite.to> | null;
   dropTween: ReturnType<typeof TweenLite.to> | null;
@@ -79,7 +94,7 @@ export class Flower extends Component <AppProps, AppState> {
   rootsTween: ReturnType<typeof TweenLite.to> | null;
   titleTween: ReturnType<typeof TweenLite.to> | null;
   paragraphTween: ReturnType<typeof TweenLite.to> | null;
-  
+  oxyTween: ReturnType<typeof TweenLite.to> | null;
   
 
   componentDidMount() {
@@ -137,11 +152,6 @@ export class Flower extends Component <AppProps, AppState> {
     this.dropTween = gsap.to(this.drop4, { y: 380, duration: 2, delay: 10.5});
     this.dropTween = gsap.to(this.drop5, { y: 430, duration: 2, delay: 10});
 
-    // this.dropTween = gsap.to(this.drop2, { y: 360, duration: 1, delay: 9});
-    // this.dropTween = gsap.to(this.drop3, { y: 400, duration: 1, delay: 9});
-    // this.dropTween = gsap.to(this.drop4, { y: 380, duration: 1, delay: 9});
-    // this.dropTween = gsap.to(this.drop5, { y: 430, duration: 1, delay: 9});
-
     this.dropTween = gsap.to(this.drop2, {x: 665, y: 350, duration: 1, delay: 12});
     this.dropTween = gsap.to(this.drop3, { x: 420, duration: 1, delay: 12.5});
     this.dropTween = gsap.to(this.drop4, { x: -390, y: 360, duration: 1, delay: 12});
@@ -150,7 +160,23 @@ export class Flower extends Component <AppProps, AppState> {
     this.paragraphTween = gsap.to(this.paragraph2, {opacity: 1, duration: 2, delay: 13.5});
     this.paragraphTween = gsap.to(this.paragraph, {opacity: 0, duration: 2, delay: 13.5});
 
-    
+    this.dropTween = gsap.to(this.drop2, {opacity: 0, duration: 2, delay: 15});
+    this.dropTween = gsap.to(this.drop3, { opacity: 0, duration: 2, delay: 15.5});
+    this.dropTween = gsap.to(this.drop4, { opacity: 0, duration: 2, delay: 15});
+    this.dropTween = gsap.to(this.drop5, { opacity: 0, duration: 2, delay: 15.5});
+    this.oxyTween = gsap.to(this.oxy, { opacity: 1, duration: 2, delay: 15.5})
+    this.oxyTween = gsap.to(this.oxy2, { opacity: 1, duration: 2, delay: 15.5})
+    this.oxyTween = gsap.to(this.oxy3, { opacity: 1, duration: 2, delay: 15.5})
+    this.oxyTween = gsap.to(this.oxy4, { opacity: 1, duration: 2, delay: 15.5})
+    this.oxyTween = gsap.to(this.oxy5, { opacity: 1, duration: 2, delay: 15.5})
+    this.oxyTween = gsap.to(this.oxy6, { opacity: 1, duration: 2, delay: 15.5})
+
+    this.oxyTween = gsap.to(this.oxy, {x: -400, y: -100, opacity: 0, duration: 3, delay: 17})
+    this.oxyTween = gsap.to(this.oxy2, {x: 400, y: -100, opacity: 0, duration: 3, delay: 17})
+    this.oxyTween = gsap.to(this.oxy3, {x: 200, y: -200, opacity: 0, duration: 3, delay: 17})
+    this.oxyTween = gsap.to(this.oxy4, {x: -400, y: -300, opacity: 0, duration: 3, delay: 17})
+    this.oxyTween = gsap.to(this.oxy5, {x: -400, y: -200, opacity: 0, duration: 3, delay: 17})
+    this.oxyTween = gsap.to(this.oxy6, {x: 400, y: -200, opacity: 0, duration: 3, delay: 17})
   }
 
   
@@ -167,6 +193,7 @@ export class Flower extends Component <AppProps, AppState> {
     return (
       <div>
         <div className='papaDiv'>
+          
           <div ref={div => this.background = div} className='bgDiv'>
             <img className='bgImg fImgs' src='./flower/background.png' alt='sky above a plot of earth' />
           </div>
@@ -203,17 +230,24 @@ export class Flower extends Component <AppProps, AppState> {
           <div onClick={this.handleClick} ref={div => this.roots = div} className='rootsDiv'>
             <img className='rootsImg fImgs' src='./flower/roots.png' alt='roots' />
           </div>
+          <div ref={div => this.oxy = div} className='oxygenDiv oxDivAll'></div>
+          <div ref={div => this.oxy2 = div} className='oxygenDiv2 oxDivAll'></div>
+          <div ref={div => this.oxy3 = div} className='oxygenDiv3 oxDivAll'></div>
+          <div ref={div => this.oxy4 = div} className='oxygenDiv4 oxDivAll'></div>
+          <div ref={div => this.oxy5 = div} className='oxygenDiv5 oxDivAll'></div>
+          <div ref={div => this.oxy6 = div} className='oxygenDiv6 oxDivAll'></div>
+          
           <div ref={div => this.title = div} className='titleDiv'>
             <h1>Photosynthesis</h1>
           </div>
           <div ref={div => this.paragraph = div} className='paragraphDiv'>
             <h2>
-              "First, the flower's roots absorb the water and nutrients in the soil."
+              First, the flower's roots absorb the water and nutrients in the soil.
             </h2>
           </div>
           <div ref={div => this.paragraph2 = div} className='paragraph2Div'>
             <h2>
-              "The chloroplasts in their leaves convert water and nutrients into food and give plants their green color"
+              The water mixes with sunlight and carbon dioxide to make the flower's favorite snack- sugar.
             </h2>
           </div>
         </div>
