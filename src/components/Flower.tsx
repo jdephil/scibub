@@ -37,6 +37,7 @@ export class Flower extends Component <AppProps, AppState> {
 
     this.paragraph = null;
     this.paragraph2 = null;
+    this.paragraph3 = null;
 
     this.oxy = null;
     this.oxy2 = null;
@@ -78,6 +79,7 @@ export class Flower extends Component <AppProps, AppState> {
 
   paragraph: HTMLDivElement | null;
   paragraph2: HTMLDivElement | null;
+  paragraph3: HTMLDivElement | null;
 
   oxy: HTMLDivElement | null; 
   oxy2: HTMLDivElement | null; 
@@ -142,41 +144,45 @@ export class Flower extends Component <AppProps, AppState> {
     
     this.paragraphTween = gsap.fromTo(this.paragraph, {opacity: 0}, {opacity: 1, duration: 3, delay: 8});
     
-    this.dropTween = gsap.to(this.drop2, {x:640, width: 20, duration: 2, delay: 8.5});
-    this.dropTween = gsap.to(this.drop3, {x:440, width: 20, duration: 2, delay: 8});
-    this.dropTween = gsap.to(this.drop4, {x:-360, width: 20, duration: 2, delay: 8.5});
-    this.dropTween = gsap.to(this.drop5, {x:-160, width: 20, duration: 2, delay: 8});
+    this.dropTween = gsap.to(this.drop2, {x:640, width: 20, duration: 2, delay: 10.5});
+    this.dropTween = gsap.to(this.drop3, {x:440, width: 20, duration: 2, delay: 10});
+    this.dropTween = gsap.to(this.drop4, {x:-360, width: 20, duration: 2, delay: 10.5});
+    this.dropTween = gsap.to(this.drop5, {x:-160, width: 20, duration: 2, delay: 10});
     
-    this.dropTween = gsap.to(this.drop2, { y: 360, duration: 2, delay: 10.5});
-    this.dropTween = gsap.to(this.drop3, { y: 400, duration: 2, delay: 10});
-    this.dropTween = gsap.to(this.drop4, { y: 380, duration: 2, delay: 10.5});
-    this.dropTween = gsap.to(this.drop5, { y: 430, duration: 2, delay: 10});
+    this.dropTween = gsap.to(this.drop2, { y: 360, duration: 2, delay: 12.5});
+    this.dropTween = gsap.to(this.drop3, { y: 400, duration: 2, delay: 12});
+    this.dropTween = gsap.to(this.drop4, { y: 380, duration: 2, delay: 12.5});
+    this.dropTween = gsap.to(this.drop5, { y: 430, duration: 2, delay: 12});
 
-    this.dropTween = gsap.to(this.drop2, {x: 665, y: 350, duration: 1, delay: 12});
-    this.dropTween = gsap.to(this.drop3, { x: 420, duration: 1, delay: 12.5});
-    this.dropTween = gsap.to(this.drop4, { x: -390, y: 360, duration: 1, delay: 12});
-    this.dropTween = gsap.to(this.drop5, { x: -140, y: 410, duration: 1, delay: 12.5});
+    this.dropTween = gsap.to(this.drop2, {x: 665, y: 350, duration: 1, delay: 14});
+    this.dropTween = gsap.to(this.drop3, { x: 420, duration: 1, delay: 14.5});
+    this.dropTween = gsap.to(this.drop4, { x: -390, y: 360, duration: 1, delay: 14});
+    this.dropTween = gsap.to(this.drop5, { x: -140, y: 410, duration: 1, delay: 14.5});
 
-    this.paragraphTween = gsap.to(this.paragraph2, {opacity: 1, duration: 2, delay: 13.5});
-    this.paragraphTween = gsap.to(this.paragraph, {opacity: 0, duration: 2, delay: 13.5});
+    this.paragraphTween = gsap.to(this.paragraph2, {opacity: 1, duration: 2, delay: 15.5});
+    this.paragraphTween = gsap.to(this.paragraph, {opacity: 0, duration: 2, delay: 15.5});
 
-    this.dropTween = gsap.to(this.drop2, {opacity: 0, duration: 2, delay: 15});
-    this.dropTween = gsap.to(this.drop3, { opacity: 0, duration: 2, delay: 15.5});
-    this.dropTween = gsap.to(this.drop4, { opacity: 0, duration: 2, delay: 15});
-    this.dropTween = gsap.to(this.drop5, { opacity: 0, duration: 2, delay: 15.5});
-    this.oxyTween = gsap.to(this.oxy, { opacity: 1, duration: 2, delay: 15.5})
-    this.oxyTween = gsap.to(this.oxy2, { opacity: 1, duration: 2, delay: 15.5})
-    this.oxyTween = gsap.to(this.oxy3, { opacity: 1, duration: 2, delay: 15.5})
-    this.oxyTween = gsap.to(this.oxy4, { opacity: 1, duration: 2, delay: 15.5})
-    this.oxyTween = gsap.to(this.oxy5, { opacity: 1, duration: 2, delay: 15.5})
-    this.oxyTween = gsap.to(this.oxy6, { opacity: 1, duration: 2, delay: 15.5})
+    this.dropTween = gsap.to(this.drop2, {opacity: 0, duration: 2, delay: 17});
+    this.dropTween = gsap.to(this.drop3, { opacity: 0, duration: 2, delay: 17.5});
+    this.dropTween = gsap.to(this.drop4, { opacity: 0, duration: 2, delay: 17});
+    this.dropTween = gsap.to(this.drop5, { opacity: 0, duration: 2, delay: 17.5});
+    this.oxyTween = gsap.to(this.oxy, { opacity: 1, duration: 2, delay: 21})
+    this.oxyTween = gsap.to(this.oxy2, { opacity: 1, duration: 2, delay: 21})
+    this.oxyTween = gsap.to(this.oxy3, { opacity: 1, duration: 2, delay: 21})
+    this.oxyTween = gsap.to(this.oxy4, { opacity: 1, duration: 2, delay: 21})
+    this.oxyTween = gsap.to(this.oxy5, { opacity: 1, duration: 2, delay: 21})
+    this.oxyTween = gsap.to(this.oxy6, { opacity: 1, duration: 2, delay: 21})
 
-    this.oxyTween = gsap.to(this.oxy, {x: -400, y: -100, opacity: 0, duration: 3, delay: 17})
-    this.oxyTween = gsap.to(this.oxy2, {x: 400, y: -100, opacity: 0, duration: 3, delay: 17})
-    this.oxyTween = gsap.to(this.oxy3, {x: 200, y: -200, opacity: 0, duration: 3, delay: 17})
-    this.oxyTween = gsap.to(this.oxy4, {x: -400, y: -300, opacity: 0, duration: 3, delay: 17})
-    this.oxyTween = gsap.to(this.oxy5, {x: -400, y: -200, opacity: 0, duration: 3, delay: 17})
-    this.oxyTween = gsap.to(this.oxy6, {x: 400, y: -200, opacity: 0, duration: 3, delay: 17})
+    this.paragraphTween = gsap.to(this.paragraph2, {opacity: 0, duration: 2, delay: 21});
+    this.paragraphTween = gsap.to(this.paragraph3, {opacity: 1, duration: 2, delay: 21});
+
+
+    this.oxyTween = gsap.to(this.oxy, {x: -400, y: -100, opacity: 0, duration: 3, delay: 23})
+    this.oxyTween = gsap.to(this.oxy2, {x: 400, y: -100, opacity: 0, duration: 3, delay: 23})
+    this.oxyTween = gsap.to(this.oxy3, {x: 200, y: -200, opacity: 0, duration: 3, delay: 23})
+    this.oxyTween = gsap.to(this.oxy4, {x: -400, y: -300, opacity: 0, duration: 3, delay: 23})
+    this.oxyTween = gsap.to(this.oxy5, {x: -400, y: -200, opacity: 0, duration: 3, delay: 23})
+    this.oxyTween = gsap.to(this.oxy6, {x: 400, y: -200, opacity: 0, duration: 3, delay: 23})
   }
 
   
@@ -242,12 +248,17 @@ export class Flower extends Component <AppProps, AppState> {
           </div>
           <div ref={div => this.paragraph = div} className='paragraphDiv'>
             <h2>
-              First, the flower's roots absorb the water and nutrients in the soil.
+              First, the flower's roots absorb the water and nutrients from the soil.
             </h2>
           </div>
           <div ref={div => this.paragraph2 = div} className='paragraph2Div'>
             <h2>
               The water mixes with sunlight and carbon dioxide to make the flower's favorite snack- sugar.
+            </h2>
+          </div>
+          <div ref={div => this.paragraph3 = div} className='paragraph3Div'>
+            <h2>
+              This process also releases oxygen back into the air.
             </h2>
           </div>
         </div>
