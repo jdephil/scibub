@@ -1,4 +1,4 @@
-import React, { Component, RefObject, createRef } from 'react';
+import React, { Component, RefObject, createRef, MouseEvent, FormEvent } from 'react';
 import { render } from 'react-dom';
 import './Flower.css';
 import gsap from 'gsap';
@@ -7,6 +7,7 @@ import Paragraph from './Paragraph'
 
 interface AppProps {}
 interface AppState {}
+
 
 export class Flower extends Component <AppProps, AppState> {
   
@@ -25,10 +26,13 @@ export class Flower extends Component <AppProps, AppState> {
     this.rootsTween = null;
     this.titleTween = null;
     this.paragraphTween = null;
+
+    this.state = {
+      message: "The flower's roots absorb water and nutrients from the soil. Click on the roots for a closer look."
+    }
     
   }
   
-
 
   drop: HTMLDivElement | null;
   stem: HTMLDivElement | null;
@@ -44,6 +48,7 @@ export class Flower extends Component <AppProps, AppState> {
   paragraphTween: ReturnType<typeof TweenLite.to> | null;
   
 
+
   componentDidMount() {
     this.dropTween = gsap.fromTo(this.drop, {y: -1, opacity: 1}, { y: 500, opacity: 0, duration: 3});
     this.stemTween = gsap.fromTo(this.stem, {height: 0, opacity: 0}, { height: 40, opacity: 1, duration: 5, delay: 3});
@@ -51,6 +56,17 @@ export class Flower extends Component <AppProps, AppState> {
     this.flowerTween = gsap.fromTo(this.flower, {opacity: 0}, {opacity: 1, duration: 3, delay: 8});
     this.titleTween = gsap.fromTo(this.title, {opacity: 0}, {opacity: 1, duration: 3, delay: 8});
     this.paragraphTween = gsap.fromTo(this.title, {opacity: 0}, {opacity: 1, duration: 3, delay: 8});
+    
+    
+  }
+
+  
+
+  handleClick = (e: any):any => {
+    e.preventDefault()
+    return(
+      this.setState({ message: "This is the next part of photosynthesis"})
+    )
     
   }
 
@@ -73,14 +89,16 @@ export class Flower extends Component <AppProps, AppState> {
           <div ref={div => this.flower = div} className='flowerDiv'>
             <img className='flowerImg fImgs' src='./flower/sunflower.png' alt='sunflower' />
           </div>
-          <div ref={div => this.roots = div} className='rootsDiv'>
+          <div onClick={this.handleClick} ref={div => this.roots = div} className='rootsDiv'>
             <img className='rootsImg fImgs' src='./flower/roots.png' alt='roots' />
           </div>
           <div ref={div => this.title = div} className='titleDiv'>
             <h1>Photosynthesis</h1>
           </div>
           <div ref={div => this.paragraph = div} className='paragraphDiv'>
-            <Paragraph />
+            <h2>
+              {this.state}
+            </h2>
           </div>
         </div>
   

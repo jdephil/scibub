@@ -10,7 +10,7 @@ const Paragraph: FunctionComponent<{initial?: string}> = ({ initial = ''}) => {
   
   return (
     <div>
-      <h2>{ pArr }</h2>
+      <h2>The flower's roots absorb water and nutrients from the soil. Click on the roots for a closer look.</h2>
     </div>
   )
   }
